@@ -5,10 +5,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import './App.css';
 
-import Navbar from "./Components/Navbar";
-import Home from "./Pages/Home";
-import Register from "./Pages/Register";
-import Login from "./Pages/Login";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   return (
