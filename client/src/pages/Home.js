@@ -28,7 +28,7 @@ function Home() {
 }
 
 const FETCH_POSTS_QUERY = gql`
- {
+ query{
     getPosts {
       id
       body
