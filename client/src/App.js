@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "semantic-ui-css/semantic.min.css";
 import './App.css';
@@ -19,11 +19,9 @@ function App() {
       <Router>
         <Container>
            <Navbar/>
-           <Switch>
              <Route exact path="/" component={Home} />
              <AuthRoute exact path="/login" component={Login} />
              <AuthRoute exact path="/register" component={Register} />
-           </Switch>
         </Container>
       </Router>
     </AuthProvider>
