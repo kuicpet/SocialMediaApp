@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Post from "./pages/Post";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
              <Route exact path="/" component={Home} />
              <AuthRoute exact path="/login" component={Login} />
              <AuthRoute exact path="/register" component={Register} />
+             <Route exact path="/posts/:postId" component={Post} />
         </Container>
       </Router>
     </AuthProvider>
