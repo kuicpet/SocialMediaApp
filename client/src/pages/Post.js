@@ -13,12 +13,17 @@ function Post(props) {
    const postId = props.match.params.postId;
    const { user } = useContext(AuthContext);
    console.log(postId);
+
    const { data: { getPost } } = useQuery(FETCH_POST_QUERY, { 
        variables: {
            postId
        }
     });
    
+    function deletePostCallback(){
+        props.history.push("/")
+    }
+
    let postMarkup;
    if(!getPost){
        postMarkup = <p>Loading post...</p>
@@ -57,7 +62,7 @@ function Post(props) {
                                 </Label>
                             </Button>
                             { user && user.username === username && (
-                                <DeleteButton postId={id} />
+                                <DeleteButton postId={{ id }} callback={deletePostCallback} />
                             )}
                         </Card.Content>
                       </Card>
@@ -65,6 +70,7 @@ function Post(props) {
                </Grid.Row>
            </Grid>
        )
+       return postMarkup;
    }
    
 }

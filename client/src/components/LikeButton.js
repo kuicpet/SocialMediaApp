@@ -47,6 +47,8 @@ const LIKE_POST_MUTATION = gql`
     mutation likePost($postId: ID!){
         likePost(postId: $postId){
             id
+            body
+            username
             likes{
                 id
                 username
