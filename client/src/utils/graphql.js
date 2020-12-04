@@ -3,24 +3,23 @@ import gql from "graphql-tag";
 
 export const FETCH_POSTS_QUERY = gql`
 {
- getPosts {
+    getPosts {
+    id
+    body
+    createdAt
+    username
+    comments {
       id
+      username
       body
       createdAt
+    }
+    likes {
+      id
       username
-      comments {
-          id
-          username
-          body
-          createdAt
-          
-      }
-      likes {
-          id
-          username
-      }
-      likeCount
-      commentCount
+    }
+    likeCount
+    commentCount
   }
  }
 `

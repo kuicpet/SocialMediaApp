@@ -10,7 +10,10 @@ import { FETCH_POSTS_QUERY } from "../utils/graphql";
 function Home() {
 
     const { user } = useContext(AuthContext);
-    const { loading, data: { getPosts: posts } } = useQuery(FETCH_POSTS_QUERY)
+    const { loading, data: { getPosts: posts } } = useQuery(FETCH_POSTS_QUERY);
+    console.log(posts)
+
+
     return (
         <Grid columns={3}>
             <Grid.Row className="page-title">
